@@ -1,0 +1,12 @@
+/*
+* @Author: skiming
+* @Date:   2017-07-16 22:00:50
+* @Last Modified by:   skiming
+* @Last Modified time: 2017-07-19 00:44:51
+*/
+#content {
+	display: flex;
+}
+.router-link-active {
+  color: red;
+}

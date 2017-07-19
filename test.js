@@ -2,7 +2,7 @@
 * @Author: skiming
 * @Date:   2017-07-16 22:00:55
 * @Last Modified by:   skiming
-* @Last Modified time: 2017-07-19 01:46:07
+* @Last Modified time: 2017-07-19 23:22:29
 */
 
 import './test.css';
@@ -12,13 +12,13 @@ import VueRouter from 'vue-router';
 import App from './App.vue';
 
 import index from './index.vue';
-import hello from './hello.vue';
+import User from './user.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
     { path: '/foo', component: index },
-    { path: '/bar', component: hello }
+    { path: '/user/:id/post/:post_id', component: User }
 ];
 
 const router = new VueRouter({

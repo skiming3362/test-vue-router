@@ -7,6 +7,7 @@ module.exports = {
         'test': './test.js'
     },
     output: {
+        publicPath: '/build/',
         path: path.resolve(__dirname, "./dist"),
         filename: "js/[name].js"
     },
@@ -30,5 +31,12 @@ module.exports = {
              chunks: ["test"],
              hash: true
          })
-    ]
+    ],
+    devServer: {
+        historyApiFallback: true,
+        host: '127.0.0.1',
+        port: '8080',
+        inline: true
+    },
+    devtool: 'cheap-module-source-map'
 };

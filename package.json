@@ -1,7 +1,8 @@
 {
   "name": "test-postcss",
   "scripts": {
-    "build": "webpack -p -d --progress --hide-modules --watch"
+    "build": "webpack -p -d --progress --hide-modules --watch",
+    "dev": "webpack-dev-server --inline --hot"
   },
   "engines": {
     "node": ">=6"
@@ -28,7 +29,8 @@
     "vue-loader": "^12.2.2",
     "vue-router": "^2.7.0",
     "vue-template-compiler": "^2.4.1",
-    "webpack": "^2.4.1"
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.5.1"
   },
   "dependencies": {
     "vue": "^2.4.1",

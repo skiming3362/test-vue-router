@@ -4,10 +4,10 @@ var plugin_html = require("html-webpack-plugin");
 var plugin_extract_text = require("extract-text-webpack-plugin");
 module.exports = {
     entry: {
-        'test': './test.js'
+        'test': './src/test.js'
     },
     output: {
-        publicPath: '/build/',
+        publicPath: '/assets/',
         path: path.resolve(__dirname, "./dist"),
         filename: "js/[name].js"
     },
@@ -27,7 +27,7 @@ module.exports = {
         }),
         new plugin_html({
              filename: "test.html",
-             template: "./test.html",
+             template: "./src/test.html",
              chunks: ["test"],
              hash: true
          })

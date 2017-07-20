@@ -2,6 +2,8 @@
   <div>
       <div>{{'params: ' + params_str}}</div>
       <div>{{'query: ' + query_str}}</div>
+      <el-input v-model="test" class="test-input"></el-input>
+      <router-view></router-view>
   </div>
 </template>
 
@@ -9,7 +11,7 @@
     export default {
         data () {
             return {
-
+                test: ''
             }
         },
         computed: {
@@ -35,8 +37,8 @@
             }
         },
         watch: {
-            route (to, from) {
-                console.log(from)
+            $route (to, from) {
+                // console.log(from)
                 console.log(to)
             }
         },
@@ -48,3 +50,9 @@
         }
     }
 </script>
+
+<style>
+    .test-input {
+        width: 200px;
+    }
+</style>

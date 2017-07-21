@@ -2,7 +2,7 @@
 * @Author: skiming
 * @Date:   2017-07-16 22:00:55
 * @Last Modified by:   skiming
-* @Last Modified time: 2017-07-20 23:44:23
+* @Last Modified time: 2017-07-21 23:11:20
 */
 
 import './test.css';
@@ -16,6 +16,7 @@ import App from './component/App.vue';
 
 import index from './component/index.vue';
 import User from './component/user.vue';
+import User2 from './component/user2.vue';
 import UserProfile from './component/user-profile.vue';
 import UserHome from './component/user-home.vue';
 
@@ -23,10 +24,14 @@ Vue.use(VueRouter);
 Vue.use(ElementUI);
 
 const routes = [
-    { path: '/foo', component: index },
+    { path: '/foo', component: index, name: 'index' },
     { 
         path: '/user/:id/post/:post_id', 
-        component: User,
+        components: {
+            default: User,
+            a: User2
+        },
+        name: 'user',
         children: [
             {
                 path: 'profile/:profile_id',

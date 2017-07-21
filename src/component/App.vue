@@ -9,7 +9,9 @@
         <router-link to="/user/3362/post/2?name=aaa">Go to User:aaa</router-link>
         <router-link to="/user/1992/post/5">Go to bbb without profile</router-link>
         <router-link to="/user/1992/post/5/profile/4598?name=bbb">Go to bbb</router-link>
+        <router-link :to="{ name: 'user', params: { id: 123, post_id: 456, profile_id: 3362 }, query: { time: 7 } }">Go to name: user</router-link>
       </p>
         <router-view></router-view>
+        <router-view name="a"></router-view>
   </div>
 </template>

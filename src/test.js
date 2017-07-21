@@ -2,7 +2,7 @@
 * @Author: skiming
 * @Date:   2017-07-16 22:00:55
 * @Last Modified by:   skiming
-* @Last Modified time: 2017-07-21 23:11:20
+* @Last Modified time: 2017-07-21 23:37:37
 */
 
 import './test.css';
@@ -24,7 +24,7 @@ Vue.use(VueRouter);
 Vue.use(ElementUI);
 
 const routes = [
-    { path: '/foo', component: index, name: 'index' },
+    { path: '/foo', alias: '/bar', component: index, name: 'index' },
     { 
         path: '/user/:id/post/:post_id', 
         components: {
@@ -42,7 +42,8 @@ const routes = [
                 component: UserHome
             },
         ]
-    }
+    },
+    { path: '/', redirect: '/foo' }
 ];
 
 const router = new VueRouter({

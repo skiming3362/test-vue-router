@@ -2,7 +2,7 @@
 * @Author: skiming
 * @Date:   2017-07-16 22:00:55
 * @Last Modified by:   skiming
-* @Last Modified time: 2017-07-21 23:37:37
+* @Last Modified time: 2017-07-21 23:47:04
 */
 
 import './test.css';
@@ -30,6 +30,10 @@ const routes = [
         components: {
             default: User,
             a: User2
+        },
+        props: {
+            default: true,
+            a: false
         },
         name: 'user',
         children: [

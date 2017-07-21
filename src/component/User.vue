@@ -2,6 +2,8 @@
   <div>
       <div>{{'params: ' + params_str}}</div>
       <div>{{'query: ' + query_str}}</div>
+      <div>{{id}}</div>
+      <div>{{post_id}}</div>
       <el-input v-model="test" class="test-input"></el-input>
       <router-view></router-view>
   </div>
@@ -12,6 +14,15 @@
         data () {
             return {
                 test: ''
+            }
+        },
+        props: {
+            id: {
+                type: String,
+                required: true
+            },
+            post_id: {
+                type: String
             }
         },
         computed: {

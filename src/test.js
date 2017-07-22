@@ -2,7 +2,7 @@
 * @Author: skiming
 * @Date:   2017-07-16 22:00:55
 * @Last Modified by:   skiming
-* @Last Modified time: 2017-07-21 23:47:04
+* @Last Modified time: 2017-07-22 18:54:52
 */
 
 import './test.css';
@@ -43,7 +43,11 @@ const routes = [
             },
             {
                 path: '',
-                component: UserHome
+                component: UserHome,
+                beforeEnter: (to, from, next) => {
+                    console.log('this is only called in route UserHome');
+                    next();
+                }
             },
         ]
     },
@@ -52,6 +56,17 @@ const routes = [
 
 const router = new VueRouter({
     routes // （缩写）相当于 routes: routes
+});
+
+router.beforeEach((to, from, next) => {
+    console.log('to: ');
+    console.log(to);
+    next();
+});
+
+router.afterEach(route => {
+    console.log('afterEach called');
+    console.log(route);
 });
 
 const app = new Vue({

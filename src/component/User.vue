@@ -58,6 +58,10 @@
         },
         created () {
             console.log(this.$route)
+        },
+        beforeRouteEnter(to, from ,next) {
+            console.log('beforeRouteEnter called');
+            next();
         }
     }
 </script>

@@ -2,7 +2,7 @@
 * @Author: skiming
 * @Date:   2017-07-16 22:00:55
 * @Last Modified by:   skiming
-* @Last Modified time: 2017-07-22 18:54:52
+* @Last Modified time: 2017-07-22 21:03:37
 */
 
 import './test.css';
@@ -35,15 +35,17 @@ const routes = [
             default: true,
             a: false
         },
-        name: 'user',
+        // name: 'user',
         children: [
             {
                 path: 'profile/:profile_id',
                 component: UserProfile
             },
             {
-                path: '',
+                path: 'home',
+                name: 'user-home',
                 component: UserHome,
+                meta: { requiresAuth: true },
                 beforeEnter: (to, from, next) => {
                     console.log('this is only called in route UserHome');
                     next();
@@ -59,9 +61,12 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    console.log('to: ');
-    console.log(to);
-    next();
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+        console.log(123);
+        next();
+    } else {
+        next();
+    }
 });
 
 router.afterEach(route => {
